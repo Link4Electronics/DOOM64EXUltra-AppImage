@@ -9,6 +9,7 @@ license=('zlib')
 depends=('sdl3' 'libvorbis' 'libmodplug' 'mpg123' 'flac' 'opusfile')
 makedepends=('fluidsynth' 'git' 'cmake')
 optdepends=('fluidsynth: MIDI software synth, replaces built-in timidity')
+options=('!debug' 'strip')
 source=("git+https://github.com/libsdl-org/SDL_mixer#commit=da02588817a565fccfa60fa2f0bb661a3c77b8f0")
 sha512sums=('SKIP')
 provides=('sdl3_mixer=$pkgver')
@@ -23,7 +24,7 @@ pkgver() {
 build() {
   cd "${srcdir}/SDL_mixer"
 
-  cmake -B build -D CMAKE_INSTALL_PREFIX=/usr
+  cmake -B build -D CMAKE_INSTALL_PREFIX=/usr -D CMAKE_BUILD_TYPE=Release
   cmake --build build
 }
 
