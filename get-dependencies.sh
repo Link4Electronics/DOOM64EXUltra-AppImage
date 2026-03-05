@@ -34,3 +34,4 @@ cmake . \
     -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
 mv -v DOOM64EXUltra ../AppDir/bin
+mv -v doom64ex-ultra.wad ../AppDir/bin
