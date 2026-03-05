@@ -1,5 +1,5 @@
 #!/bin/false
-dir=${XDG_LOCAL_HOME:-~/.local/share}/doom64exultra
+dir=${XDG_LOCAL_HOME:-~/.local/share}/doom64ex-ultra
 #if [ ! -f "$dir"/config.xml ]; then
 mkdir -p "$dir"
 #  cp "$APPDIR"/bin/config.xml "$dir"
