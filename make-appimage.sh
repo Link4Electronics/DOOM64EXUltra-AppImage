@@ -8,12 +8,13 @@ export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export DEPLOY_OPENGL=1
-export DEPLOY_PIPEWIRE=1
+export DEPLOY_PULSE=1
 
 # Deploy dependencies
 quick-sharun ./AppDir/bin/DOOM64EXUltra /usr/lib/libfluidsynth.so*
 
 # Additional changes can be done in between here
+echo 'ANYLINUX_DO_NOT_LOAD_LIBS=libpipewire-*.so*:${ANYLINUX_DO_NOT_LOAD_LIBS}' >> ./AppDir/.env
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
